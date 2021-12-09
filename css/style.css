@@ -1,0 +1,311 @@
+
+/* penser mobile first et montrer rapidement les mediaqueries ? */
+/* natives et reset - parler des preset par défault - par les class et id + héritage */
+
+* {
+  box-sizing: border-box;
+  
+}
+/*  fonts, colors */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background:#000;
+  /* color:#FFF; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /*text-align: center;*/
+  margin:0;
+ 
+}
+
+h1 {
+  font-size:3.1rem;
+}
+h2 {
+  font-size:2.8rem;
+  font-weight: 600;  
+  text-transform: uppercase;
+}
+h3 {
+  font-size:2.1rem;
+  font-weight: normal;  
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.list-unstyled {
+  list-style: none;  
+  margin:0;
+  padding:0;
+}
+
+/* Container, Grids */
+
+.container {
+  padding: 1rem 2rem;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin:-1rem;
+}
+
+.grid__item {
+  flex:1 0 50%;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 2rem;
+  }
+  .grid__item {
+    flex:1 0 33%;
+  }
+}
+
+/* sections */
+
+section {
+  padding:59px 0;
+}
+.section-header {
+  text-align: center;
+}
+.section-title {
+  margin-top: 0;
+}
+
+.header {
+  /*  les display */
+  background-color: #FFF;
+  border-bottom: 1px solid #EEE;
+  position: sticky;
+  top:0;
+}
+
+/*  heritage et profondeur */
+.header li {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding:0 5px;
+}
+
+.header a {
+  color: #333;
+}
+.header a:hover {
+  color: #000;
+  
+}
+.header .right {
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.socials li {  
+  height: 30px;  
+}
+.socials a {
+  color: #333;
+}
+
+.socials .icon {
+  height: 18px;
+}
+
+.burger {
+  background: none;
+  border:none;
+  position: relative;
+  width:35px;
+  height: 35px;
+  margin-left:1rem;
+  cursor: pointer;
+}
+.burger .bar {
+  width: 22px;
+  height: 3px;
+  display: block;
+  background-color: #333;
+}
+.burger .bar::before, .burger .bar::after {
+  content: "";
+  width: 22px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  background-color: #333;
+}
+.burger .bar::before {
+  top:8px;
+}
+.burger .bar::after {
+  bottom:7px;
+}
+
+@media screen and (max-width: 749px) {
+  nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .burger {
+    display: none;
+  }
+}
+
+.title {
+  /*  les display et float - expliquer le span ... */
+  /* background-color: chocolate;
+  display: inline-block; */
+  font-size: 4rem;
+  margin:1rem 0;
+}
+
+.hero {
+  /*display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center; display: flex; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5B6C78;
+  color: #FFF;
+}
+
+.hero p {
+  color: inherit;
+}
+
+.hero__item {
+  flex:1 0 50%;
+  padding:2rem 1rem;
+  text-align: center;
+}
+
+.hero__item img {
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+/*
+.left {
+  background:#999;
+}
+
+.right {
+  background:#555;
+}
+*/
+
+@media screen and (max-width: 749px) {  
+  .hero__item.left {
+    order:2;
+  }
+  .hero__item.right {
+    order:1;
+  }
+}
+@media screen and (min-width: 750px) {
+  .hero {
+    flex-direction: row;
+  }
+  .hero__item {
+    padding:5rem;
+    text-align: left;
+  }
+  .hero__item img {
+    max-width: 100%;
+  }  
+}
+
+.services {
+  background-color: #F5F5F5;
+}
+.service { 
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.service__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+  width: 90px;
+  height: 90px;
+  padding:  1rem;
+  border:2px solid #5B6C78;
+  color: 5B6C78;
+  border-radius: 50%;  
+}
+.service__icon svg {  
+  height: 35px;
+}
+.service__content {
+  flex:1;
+}
+.service h3 {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .service {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .service__icon {
+    margin:0 2rem 0 0;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .services .grid__item {
+    flex:1 0 100%;
+  }
+}
+
+.portfolio {
+  background-color: #F5F5F5;
+}
+
+footer {
+  background-color: #000;
+  color: #EEE;
+}
+
+@media screen and (max-width: 749px) {
+  footer .grid__item {
+    flex:1 0 100%;
+  }
+}
