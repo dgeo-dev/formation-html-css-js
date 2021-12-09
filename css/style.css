@@ -188,19 +188,22 @@ nav a:hover {
   /*  les display et float - expliquer le span ... */
   /* background-color: chocolate;
   display: inline-block; */
-  font-size: 4rem;
+  font-size: 5rem;
   margin:1rem 0;
 }
 
-.hero {
+
+.hero  {  
+  background-color: #5B6C78;
+  color: #FFF;
+}
+.hero .grid {
   /*display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center; display: flex; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #5B6C78;
-  color: #FFF;
+  align-items: center;  
 }
 
 .hero p {
@@ -237,11 +240,10 @@ nav a:hover {
   }
 }
 @media screen and (min-width: 750px) {
-  .hero {
+  .hero .grid {
     flex-direction: row;
   }
-  .hero__item {
-    padding:5rem;
+  .hero__item {   
     text-align: left;
   }
   .hero__item img {
