@@ -14,13 +14,15 @@ html {
 body {
   font-size: 1.6rem;
   background:#000;
-  /* color:#FFF; */
+  color:#555;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   /*text-align: center;*/
   margin:0;
  
 }
-
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+}
 h1 {
   font-size:3.1rem;
 }
@@ -35,7 +37,7 @@ h3 {
 }
 
 p {
-  color: #555;
+ 
   line-height: 1.6;
 }
 
@@ -45,6 +47,10 @@ a {
 
 img {
   max-width: 100%;
+}
+
+ul {
+  padding-left: 2rem;
 }
 
 .list-unstyled {
@@ -85,6 +91,17 @@ img {
   .grid__item {
     flex:1 0 33%;
   }
+  .grid__item-one-half {
+    flex:1 0 50%;
+  }
+  .grid__item-one-third {
+    flex:1 0 33%;
+  }
+  /* 
+  one half
+  one third 
+  
+  */
 }
 
 /* sections */
@@ -96,6 +113,7 @@ section {
   text-align: center;
 }
 .section-title {
+  color:#000;
   margin-top: 0;
 }
 
@@ -188,13 +206,21 @@ nav a:hover {
   /*  les display et float - expliquer le span ... */
   /* background-color: chocolate;
   display: inline-block; */
-  font-size: 5rem;
+  font-size: 4rem;
   margin:1rem 0;
 }
 
+@media screen and (min-width: 750px) {
+  .title {
+    font-size: 5rem;
+  }
+}
 
 .hero  {  
   background-color: #5B6C78;
+  color: #FFF;
+}
+.hero h1 {    
   color: #FFF;
 }
 .hero .grid {
@@ -250,7 +276,16 @@ nav a:hover {
     max-width: 100%;
   }  
 }
-
+@media screen and (max-width: 749px) {  
+  .about .grid__item {
+    flex:1 0 100%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .about img {
+    padding-right: 3rem;
+  }
+}
 .services {
   background-color: #F5F5F5;
 }
