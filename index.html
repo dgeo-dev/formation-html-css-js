@@ -21,7 +21,10 @@
 </head>
 
 <body style="background-color: rgb(253, 253, 253);">
-
+  <!-- 
+  commentaire html 
+  https://developer.mozilla.org/fr/docs/Web/HTML
+-->
   <header class="header">
     <div class="container d-flex">
       <div class="logo">John Doe</div>
@@ -380,6 +383,85 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero sed similique et odit eaque
           voluptate doloribus nisi nobis animi sunt quisquam sequi pariatur fuga placeat commodi, suscipit quaerat
           fugiat?</p>
+        <ul class="grid portfolio-filters list-unstyled">
+
+          <li class="grid__item "><a href="#" class="active" data-filter="all">Tous les projets</a></li>
+          <li class="grid__item "><a href="#" data-filter="web">Développement web</a></li>
+          <li class="grid__item "><a href="#" data-filter="design">Refonte Graphique</a></li>
+          <li class="grid__item "><a href="#" data-filter="app">Applications</a></li>
+
+        </ul>
+        <div class="grid">
+          <div class="grid__item">
+            <div class="card" data-category="web">
+              <img src="https://picsum.photos/600/400?random=1" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Développement Web</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+          </div>
+          <div class="grid__item">
+            <div class="card" data-category="design">
+              <img src="https://picsum.photos/600/400?random=2" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Refonte graphique</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+
+          </div>
+          <div class="grid__item">
+            <div class="card" data-category="app">
+              <img src="https://picsum.photos/600/400?random=3" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Application</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+          </div>
+
+          <div class="grid__item">
+            <div class="card" data-category="web">
+              <img src="https://picsum.photos/600/400?random=4" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Développement Web</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+          </div>
+          <div class="grid__item">
+            <div class="card" data-category="design">
+              <img src="https://picsum.photos/600/400?random=5" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Refonte graphique</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+
+          </div>
+          <div class="grid__item">
+            <div class="card" data-category="app">
+              <img src="https://picsum.photos/600/400?random=6" class="card__image"
+                alt="Projet site de la ville de lyon">
+              <div class="card__inner">
+                <h3 class="card__title">Titre du projet</h3>
+                <p class="card__category">Application</p>
+              </div>
+              <div class="card__overlay"><a href="#">+</a></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
