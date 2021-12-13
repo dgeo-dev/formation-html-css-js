@@ -142,13 +142,15 @@ function menuMobile() {
 
 menuMobile();
 
+/* Portfolio */
+
 function tabsFilters() {
   const tabs = document.querySelectorAll('.portfolio-filters a');
   const projets = document.querySelectorAll('.portfolio .card');
 
   const resetActiveLinks = () => {
-    tabs.forEach(element => {
-      element.classList.remove('active');
+    tabs.forEach(elem => {
+      elem.classList.remove('active');
     });
   }
   const showProjets = (elem) => {
@@ -175,16 +177,56 @@ function tabsFilters() {
     });
   }
 
-  tabs.forEach(element => {
-    element.addEventListener('click', function (event) {
+  tabs.forEach(elem => {
+    elem.addEventListener('click', function (event) {
       event.preventDefault();
-      let filter = element.getAttribute('data-filter');
+      let filter = elem.getAttribute('data-filter');
       showProjets(filter)
       resetActiveLinks();
-      element.classList.add('active');
+      elem.classList.add('active');
     });
   });
 
 }
 
 tabsFilters();
+
+function showProjectDetails() {
+  const links = document.querySelectorAll('.portfolio a');
+  const modals = document.querySelectorAll('.modal');
+  const btnsClose = document.querySelectorAll('.modal__close');
+
+  function hideModals() {
+    modals.forEach(modal => {
+      modal.classList.remove('show');
+    });
+  }
+  function onClickCloseBtn() {
+    btnsClose.forEach(btn => {
+      btn.addEventListener('click', function (event) {
+        hideModals();
+      });
+    });
+  }
+  
+  function showModal(id) {
+    let modal = document.getElementById(id);
+    modal.classList.add('show');
+    onClickCloseBtn();
+    
+  }
+  
+
+  links.forEach(elem => {
+    elem.addEventListener('click', function (event) {
+      event.preventDefault();
+      let id = elem.getAttribute('data-id');
+      console.log(id);
+      hideModals();
+      showModal(id);
+    });
+  });
+  
+}
+
+showProjectDetails();

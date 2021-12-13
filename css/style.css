@@ -2,11 +2,17 @@
 /* penser mobile first et montrer rapidement les mediaqueries ? */
 /* natives et reset - parler des preset par défault - par les class et id + héritage */
 /* https://developer.mozilla.org/fr/docs/Web/CSS */
-* {
-  box-sizing: border-box;
-  
+
+/* opti */
+:root {
+  --colorBody: #555;
 }
-/*  fonts, colors */
+
+* {
+  box-sizing: border-box;  
+}
+
+/*  Global */
 html {
   font-size: 62.5%;
 }
@@ -59,6 +65,8 @@ ul {
 li {
   margin-bottom: 1rem;
 }
+
+/* utils */
 
 .list-unstyled {
   list-style: none;  
@@ -499,26 +507,66 @@ nav a:hover {
 .portfolio .card__overlay a {
   color: #FFF;
   font-size: 45px;
+  flex:1;
+  text-align: center;
 }
 .portfolio .grid__item {
   flex: 1 0 50%;
   margin-bottom: 0;
 }
+
+.portfolio .modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.portfolio .modal__content {
+  background-color: #fefefe;
+  height: 100%;
+  padding: 3rem;
+  overflow: auto;   
+}
+
+.portfolio .modal__close {
+  position: absolute;
+  right: 1rem;
+  top:1rem;
+  background:none;
+  border:1px solid #EEE;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 3.1rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.portfolio .show.modal {
+  display: block;
+}
 @media screen and (min-width: 750px) {
   .portfolio .grid__item {
-    flex: 0 0 33%;
+    flex: 0 0 33.333%;
   }
   .portfolio-filters .grid__item {
-    flex:0 0 25%;
+    flex:1 0 25%;
   }
   
 }
 
-/* contact */
+/* Contact */
 
 .form {
   max-width: 600px;
   margin:4rem auto 0;
+  
 }
 
 .form input,
@@ -527,6 +575,7 @@ nav a:hover {
   width: 100%;
   padding: 1rem;
   margin-bottom: 2rem;
+  font-family: inherit;
 }
 .form textarea {
   min-height: 300px;
@@ -581,6 +630,8 @@ footer .socials a:hover {
     text-align: left;
   }
 }
+
+
 /*
 .is-black {
   background: #000;
