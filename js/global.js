@@ -135,9 +135,15 @@ header.addEventListener("click", () => {
 function menuMobile() {
   const btn = document.querySelector('.burger');
   const header = document.querySelector('.header');
+  const links = document.querySelectorAll('.navbar a');
   btn.addEventListener('click', () => {
     header.classList.toggle('show-nav');
-  })
+  });
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      header.classList.remove('show-nav');
+    });
+  });
 }
 
 menuMobile();
@@ -192,7 +198,8 @@ function tabsFilters() {
 tabsFilters();
 
 function showProjectDetails() {
-  const links = document.querySelectorAll('.portfolio a');
+  
+  const links = document.querySelectorAll('.card__link');
   const modals = document.querySelectorAll('.modal');
   const btnsClose = document.querySelectorAll('.modal__close');
 
@@ -201,29 +208,17 @@ function showProjectDetails() {
       modal.classList.remove('show');
     });
   }
-  function onClickCloseBtn() {
-    btnsClose.forEach(btn => {
-      btn.addEventListener('click', function (event) {
-        hideModals();
-      });
-    });
-  }
-  
-  function showModal(id) {
-    let modal = document.getElementById(id);
-    modal.classList.add('show');
-    onClickCloseBtn();
-    
-  }
-  
 
   links.forEach(elem => {
     elem.addEventListener('click', function (event) {
       event.preventDefault();
-      let id = elem.getAttribute('data-id');
-      console.log(id);
+      document.querySelector(`[id="${elem.dataset.id}"]`).classList.add('show');
+    });
+  });
+
+  btnsClose.forEach(btn => {
+    btn.addEventListener('click', function () {
       hideModals();
-      showModal(id);
     });
   });
   
