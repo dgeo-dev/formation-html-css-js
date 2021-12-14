@@ -225,3 +225,56 @@ function showProjectDetails() {
 }
 
 showProjectDetails();
+
+/* Effects */
+
+const observerIntersectionAnimation = function(){
+  
+  let sections = document.querySelectorAll("section");  
+  let skills = document.querySelectorAll(".skills .bar");
+  
+  const init = () => {
+
+    sections.forEach(elem => {
+      elem.style.visibility = "hidden";
+      elem.style.opacity = "0";
+      elem.style.transition = "all 1s ease-out";
+    });
+     skills.forEach(elem => {
+      elem.style.width = "0";     
+      elem.style.transition = "all 1.6s";
+    });
+  }
+
+  init();
+    
+  let sectionObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        let section = entry.target;
+        section.style.visibility = "visible";
+        section.style.opacity = "1";  
+        sectionObserver.unobserve(section);
+      } 
+    });
+  });
+
+  sections.forEach(function(section) {
+    sectionObserver.observe(section);
+  });
+  
+  let skillsObserver = new IntersectionObserver(function (entries, observer) { 
+    entries.forEach(function (entry) {      
+      if (entry.isIntersecting) {
+        let bar = entry.target;          
+        bar.style.width = bar.dataset.width +'%';                      
+      } 
+    });
+  });
+
+  skills.forEach(function(section) {
+    skillsObserver.observe(section);
+  });
+}
+
+observerIntersectionAnimation();
