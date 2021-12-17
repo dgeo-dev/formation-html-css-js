@@ -75,6 +75,7 @@ tableau.forEach(elem => {
   console.log('obj ' + elem);
 })
 
+
 // fonctions 
 
 /* function myFunction() {
