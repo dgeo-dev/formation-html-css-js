@@ -332,6 +332,7 @@ section {
 .hero {
   background-color: #5b6c78;
   color: #fff;
+  padding: 0;
 }
 
 .hero h1 {
