@@ -236,8 +236,12 @@ const observerIntersectionAnimation = function(){
   
   const init = () => {
 
-    sections.forEach(elem => {
-      elem.style.visibility = "hidden";
+    sections.forEach((elem, index) => {
+      console.log(index);
+      if (index === 0) {
+        return
+      }
+      
       elem.style.opacity = "0";
       elem.style.transition = "all 1s ease-out";
     });
@@ -252,8 +256,7 @@ const observerIntersectionAnimation = function(){
   let sectionObserver = new IntersectionObserver(function(entries, observer) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        let section = entry.target;
-        section.style.visibility = "visible";
+        let section = entry.target;       
         section.style.opacity = "1";  
         sectionObserver.unobserve(section);
       } 
