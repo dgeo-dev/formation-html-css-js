@@ -598,7 +598,7 @@
       </div>
       <form action="https://formsubmit.co/5ab2324161bd40ae2b22058e36806778" method="POST" class="form">
         <label for="firstname">
-          <input type="text" name="firstname" id="firstname" placeholder="Nom" />
+          <input type="text" name="firstname" id="firstname" placeholder="Nom" required />
         </label>
 
         <label for="lastname">
@@ -606,11 +606,13 @@
         </label>
 
         <label for="email">
-          <input type="email" name="email" id="email" placeholder="Email" />
+          <input type="email" name="email" id="email" placeholder="Email" required />
         </label>
 
+        <input type="hidden" name="_next" value="./blog.html">
+
         <label for="name">
-          <textarea type="text" name="text" id="text" placeholder="Message"></textarea>
+          <textarea type="text" name="text" id="text" placeholder="Message" required></textarea>
         </label>
         <input type="submit" value="Envoyer" class="btn" />
       </form>
