@@ -110,7 +110,7 @@ header.classList.add('is-black');
 
 console.log(header.classList);
 
-// insertion dom 
+
 
 // événements les plus courants
 
@@ -130,6 +130,20 @@ header.addEventListener("click", () => {
   console.log("on click sur le header");
 });
 */
+
+// insertion dom et navigation dans le dom
+
+// montrer creation element et insertion
+
+let headerWrapper = document.querySelector('.header');
+let div = document.createElement('div');
+div.classList.add('top-header');
+div.innerHTML = `<span>TOP Header</span>`;
+// headerWrapper.append(div);
+// headerWrapper.appendChild(div);
+// headerWrapper.parentNode.append(div, headerWrapper);
+// console.log(headerWrapper.nextElementSibling);
+// headerWrapper.nextElementSibling.append(div);
 
 // functions du thème
 
