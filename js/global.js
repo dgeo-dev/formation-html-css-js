@@ -4,6 +4,8 @@ console.log('toto');
 /* 
 commentaire 
 plusieures lignes 
+
+parler du display grid
 */
 
 // string
@@ -13,13 +15,6 @@ let myVar = "let";
 myVar = "new";
 
 console.log(myVar);
-
-// template string, Littéraux de gabarits et concat
-
-let test = 'text ' + myVar;
-let test2 = `text ${myVar}`;
-console.log(test);
-console.log(test2);
 
 // boolean
 
@@ -38,6 +33,13 @@ console.log(chiffre1 + chiffre2)
 console.log(chiffre1 - chiffre2)
 console.log(chiffre1 / chiffre2)
 console.log(chiffre1 * chiffre2)
+
+// template string, Littéraux de gabarits et concat
+
+let test = 'text ' + myVar;
+let test2 = `text ${myVar}`;
+console.log(test);
+console.log(test2);
 
 // conditions - if et les switch
 
@@ -93,7 +95,7 @@ console.log(resultat);
 
 
 // interagir avec le dom // methode, proprietes, evement
-console.log(window); 
+console.log(window);
 console.log(document);
 
 // selectors amusez-vous !
@@ -102,7 +104,7 @@ console.log(header);
 
 let grids = document.querySelectorAll('.grid');
 console.log(grids.length);
-grids.forEach((grid)  => {
+grids.forEach((grid) => {
   console.log(grid);
 })
 
@@ -175,16 +177,16 @@ function tabsFilters() {
     });
   }
   const showProjets = (elem) => {
-    
+
     projets.forEach(projet => {
 
       let filter = projet.getAttribute('data-category');
-    
+
       if (elem === "all") {
         projet.parentNode.classList.remove('hide');
         return
       }
-   
+
       /*if (filter !== elem) {
         projet.parentNode.classList.add('hide');
        
@@ -194,7 +196,7 @@ function tabsFilters() {
       }*/
 
       filter !== elem ? projet.parentNode.classList.add('hide') : projet.parentNode.classList.remove('hide');
-      
+
     });
   }
 
@@ -213,7 +215,11 @@ function tabsFilters() {
 tabsFilters();
 
 function showProjectDetails() {
-  
+
+  /*for (let index = 1; index <= 6; index++) {
+    document.getElementById(`modal-container-${index}`).innerHTML = createPortfolioDetails(index);
+  }*/
+
   const links = document.querySelectorAll('.card__link');
   const modals = document.querySelectorAll('.modal');
   const btnsClose = document.querySelectorAll('.modal__close');
@@ -236,18 +242,20 @@ function showProjectDetails() {
       hideModals();
     });
   });
-  
+
 }
 
-showProjectDetails();
+if (document.getElementById("portolio")) showProjectDetails();
+
+
 
 /* Effects */
 
-const observerIntersectionAnimation = function(){
-  
-  let sections = document.querySelectorAll("section");  
+const observerIntersectionAnimation = function () {
+
+  let sections = document.querySelectorAll("section");
   let skills = document.querySelectorAll(".skills .bar");
-  
+
   const init = () => {
 
     sections.forEach((elem, index) => {
@@ -255,44 +263,46 @@ const observerIntersectionAnimation = function(){
       if (index === 0) {
         return
       }
-      
+
       elem.style.opacity = "0";
       elem.style.transition = "all 1s ease-out";
     });
-     skills.forEach(elem => {
-      elem.style.width = "0";     
+    skills.forEach(elem => {
+      elem.style.width = "0";
       elem.style.transition = "all 1.6s";
     });
   }
 
   init();
-    
-  let sectionObserver = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(function(entry) {
+
+  let sectionObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        let section = entry.target;       
-        section.style.opacity = "1";  
+        let section = entry.target;
+        section.style.opacity = "1";
         sectionObserver.unobserve(section);
-      } 
+      }
     });
   });
 
-  sections.forEach(function(section) {
+  sections.forEach(function (section) {
     sectionObserver.observe(section);
   });
-  
-  let skillsObserver = new IntersectionObserver(function (entries, observer) { 
-    entries.forEach(function (entry) {      
+
+  let skillsObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        let bar = entry.target;          
-        bar.style.width = bar.dataset.width +'%';                      
-      } 
+        let bar = entry.target;
+        bar.style.width = bar.dataset.width + '%';
+      }
     });
   });
 
-  skills.forEach(function(section) {
+  skills.forEach(function (section) {
     skillsObserver.observe(section);
   });
 }
 
 observerIntersectionAnimation();
+
+
